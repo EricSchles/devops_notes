@@ -1,0 +1,9 @@
+# Introduction
+
+Docker is a container platform for making apps portable
+
+## Introductory commands
+
+docker run -it [IMAGE NAME] /bin/bash
+
+This runs the docker image in interactive mode.  
