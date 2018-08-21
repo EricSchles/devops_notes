@@ -28,3 +28,56 @@ So for instance:
 
 `docker run -d [IMAGE NAME] --name [UNIQUE NAME OF YOUR CHOICE] -v [ABSOLUTE FILE PATH ON HOST OS]:[ABSOLUTE FILE PATH ON CONTAINER] -it /bin/bash`
 
+## Pushing a docker image to docker hub
+
+`docker push [DOCKERHUB USER NAME]/[IMAGE NAME]`
+
+
+## Using a Dockerfile
+
+Once you have made an application and created a Dockerfile, the next step is to containerize your application.
+
+In order to do this, run the following commands:
+
+
+You can also specify a tag with a : like so:
+
+`docker build -t [IMAGE NAME]:[IMAGE TAG] [RELATIVE PATH]`
+
+the `-t` flag let's you name the image
+
+If you are using the current directory you can do the following:
+
+`docker build -t [IMAGE NAME]:[IMAGE TAG] .`
+
+because `.` is the current working directory.
+
+If you have multiple dockerfiles in the same directory, you name them with an extension, for instance:
+
+`Dockerfile.[EXTENSION NAME]`, for example:
+
+`Dockerfile.pythonapp`
+
+If you want to build that specific Dockerfile then you do,
+
+`docker build -t [IMAGE NAME]:[IMAGE TAG] -f Dockerfile.[EXTENSION NAME] .`
+
+Once the docker file has built, you can run your docker container as follows:
+
+`docker run -p [EXTERNALLY EXPOSED PORT]:[DOCKER EXPOSED PORT] [IMAGE NAME]`
+
+You can also specify environment variables like so:
+
+`docker run -e [ENVIRONMENT VARIABLE NAME]=[ENVIRONMENT VARIABLE VALUE] [IMAGE NAME]`
+
+You can also run a docker container in detached mode, which is the same thing as running it as a daemon or background task or background process like so:
+
+`docker run -d [IMAGE NAME]`
+
+It's important to note that you'll get an error if the port is in use:
+
+
+
+
+
+
