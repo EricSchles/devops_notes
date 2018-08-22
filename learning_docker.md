@@ -76,8 +76,19 @@ You can also run a docker container in detached mode, which is the same thing as
 
 It's important to note that you'll get an error if the port is in use:
 
+If you want to only want the docker container to persist while it is running, the following pattern is useful:
 
+`docker run --rm -it [IMAGE NAME] [EXECUTION COMMAND]`
 
+Notice the `--rm` this is what removes the docker container once it has completed.  Otherwise the container will persist on your machine after the command is run.
+
+`docker logs -f [CONTAINER NAME]`
+
+This will give you the logs for the container.  Generally speaking, logs are information broadcast over standard in / standard out through the machine.
+
+`docker exec -it [CONTAINER NAME] [EXECUTION COMMAND]`
+
+this command allows you to execute commands into a already running container.  Note, this is different than `docker run` because it does not start up a container.  The typical case is to use `docker exec` for debugging and therefore bash is an obvious or typical command to run in conjunction.
 
 
 
