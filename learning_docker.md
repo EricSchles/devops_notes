@@ -42,7 +42,7 @@ In order to do this, run the following commands:
 
 You can also specify a tag with a : like so:
 
-`docker build -t [IMAGE NAME]:[IMAGE TAG] [RELATIVE PATH]`
+`docker build -t <docker_id>/[IMAGE NAME]:[IMAGE TAG] [RELATIVE PATH]`
 
 the `-t` flag let's you name the image
 
